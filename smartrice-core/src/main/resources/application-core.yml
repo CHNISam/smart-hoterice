@@ -1,0 +1,4 @@
+smartrice:
+  jwt:
+    secret: SmartRicePlatformSecretKey2026ForJwtTokenGeneration
+    expiration: 86400
