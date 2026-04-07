@@ -64,6 +64,14 @@ INSERT INTO smartrice_service_point (id, name, type, city, address, latitude, lo
 (3, '华特米业蟠龙门市', 'STORE', '佛山', '佛山市南海区蟠龙路', 23.031200, 113.125600, '0757-34567890', '08:00-18:00', 1);
 
 -- ============================================================
+-- Service Point Goods (seed baseline for V0.2.0 management pages)
+-- ============================================================
+INSERT INTO smartrice_service_point_goods (id, service_point_id, goods_id, price, enabled) VALUES
+(1, 1, 1, 79.90, 1),
+(2, 2, 3, 69.90, 1),
+(3, 3, 5, 52.90, 1);
+
+-- ============================================================
 -- Delivery Regions (from thesis test data)
 -- ============================================================
 INSERT INTO smartrice_delivery_region (id, name, center_lat, center_lng, radius_km, priority, min_batch_threshold, driver_id, service_point_id, enabled) VALUES
