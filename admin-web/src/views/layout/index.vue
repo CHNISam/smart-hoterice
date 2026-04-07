@@ -17,6 +17,18 @@
           <el-icon><DataBoard /></el-icon>
           <template #title>首页</template>
         </el-menu-item>
+        <el-menu-item index="/goods">
+          <el-icon><Goods /></el-icon>
+          <template #title>商品管理</template>
+        </el-menu-item>
+        <el-menu-item index="/service-points">
+          <el-icon><Shop /></el-icon>
+          <template #title>服务点管理</template>
+        </el-menu-item>
+        <el-menu-item index="/delivery-regions">
+          <el-icon><Location /></el-icon>
+          <template #title>配送片区管理</template>
+        </el-menu-item>
       </el-menu>
     </el-aside>
     <el-container>
@@ -47,7 +59,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { DataBoard, Fold, Expand, ArrowDown } from '@element-plus/icons-vue'
+import { DataBoard, Fold, Expand, ArrowDown, Goods, Shop, Location } from '@element-plus/icons-vue'
 import { getInfo, logout } from '../../api/auth'
 
 const router = useRouter()
@@ -83,6 +95,7 @@ const handleCommand = async (command) => {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 .logo.collapsed {
   font-size: 16px;
   letter-spacing: 0;
