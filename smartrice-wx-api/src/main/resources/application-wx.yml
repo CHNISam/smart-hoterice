@@ -1,0 +1,3 @@
+smartrice:
+  wx:
+    api-prefix: /wx

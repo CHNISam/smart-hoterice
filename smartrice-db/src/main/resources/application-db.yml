@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/smartrice?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: smartrice
+      password: smartrice123456
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 60000
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.smartrice.db.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
