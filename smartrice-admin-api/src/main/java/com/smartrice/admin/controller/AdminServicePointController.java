@@ -18,6 +18,12 @@ public class AdminServicePointController {
         return ResponseUtil.ok(servicePointService.findAll());
     }
 
+    @GetMapping("/detail")
+    public Object detail(@RequestParam Integer id) {
+        SmartRiceServicePoint point = servicePointService.findById(id);
+        return point == null ? ResponseUtil.badArgumentValue() : ResponseUtil.ok(point);
+    }
+
     @PostMapping("/create")
     public Object create(@RequestBody SmartRiceServicePoint point) {
         return ResponseUtil.ok(servicePointService.create(point));

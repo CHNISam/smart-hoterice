@@ -4,6 +4,10 @@ export function listServicePoints() {
   return request({ url: '/service-point/list', method: 'get' })
 }
 
+export function detailServicePoint(id) {
+  return request({ url: '/service-point/detail', method: 'get', params: { id } })
+}
+
 export function createServicePoint(data) {
   return request({ url: '/service-point/create', method: 'post', data })
 }

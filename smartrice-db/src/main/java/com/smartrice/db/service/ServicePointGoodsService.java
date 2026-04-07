@@ -18,6 +18,10 @@ public class ServicePointGoodsService {
         return servicePointGoodsMapper.findAllWithDetails();
     }
 
+    public List<Map<String, Object>> findByServicePointIdWithDetails(Integer servicePointId) {
+        return servicePointGoodsMapper.findByServicePointIdWithDetails(servicePointId);
+    }
+
     public List<Map<String, Object>> findEnabledGoodsByServicePointId(Integer servicePointId) {
         return servicePointGoodsMapper.findEnabledGoodsByServicePointId(servicePointId);
     }

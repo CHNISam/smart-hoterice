@@ -31,16 +31,16 @@ const routes = [
         meta: { title: '服务点管理' }
       },
       {
+        path: 'service-points/:id',
+        name: 'ServicePointEdit',
+        component: () => import('../views/service-point/edit.vue'),
+        meta: { title: '编辑服务点' }
+      },
+      {
         path: 'delivery-regions',
         name: 'DeliveryRegions',
         component: () => import('../views/delivery-region/index.vue'),
         meta: { title: '配送片区管理' }
-      },
-      {
-        path: 'service-point-goods',
-        name: 'ServicePointGoods',
-        component: () => import('../views/service-point-goods/index.vue'),
-        meta: { title: '服务点商品' }
       }
     ]
   }

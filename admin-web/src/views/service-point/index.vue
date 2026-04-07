@@ -55,9 +55,11 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { ElMessageBox } from 'element-plus'
 import { createServicePoint, deleteServicePoint, listServicePoints, updateServicePoint } from '../../api/servicePoint'
 
+const router = useRouter()
 const points = ref([])
 const dialogVisible = ref(false)
 const form = ref(createEmptyForm())
@@ -75,11 +77,7 @@ function openCreate() {
 }
 
 function openEdit(row) {
-  form.value = {
-    ...createEmptyForm(),
-    ...row
-  }
-  dialogVisible.value = true
+  router.push(`/service-points/${row.id}`)
 }
 
 async function handleSubmit() {

@@ -1,7 +1,11 @@
 import request from '../utils/request'
 
-export function listServicePointGoods() {
-  return request({ url: '/service-point-goods/list', method: 'get' })
+export function listServicePointGoods(servicePointId) {
+  return request({
+    url: '/service-point-goods/list',
+    method: 'get',
+    params: servicePointId ? { servicePointId } : undefined
+  })
 }
 
 export function saveServicePointGoods(data) {

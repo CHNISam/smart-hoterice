@@ -37,6 +37,26 @@ public interface ServicePointGoodsMapper {
                    spg.goods_id AS goodsId,
                    spg.price,
                    spg.enabled,
+                   sp.name AS servicePointName,
+                   g.name AS goodsName,
+                   g.category_id AS categoryId,
+                   g.retail_price AS retailPrice,
+                   g.unit
+            FROM smartrice_service_point_goods spg
+            LEFT JOIN smartrice_service_point sp ON spg.service_point_id = sp.id
+            LEFT JOIN smartrice_goods g ON spg.goods_id = g.id
+            WHERE spg.deleted = 0
+              AND spg.service_point_id = #{servicePointId}
+            ORDER BY spg.id DESC
+            """)
+    List<Map<String, Object>> findByServicePointIdWithDetails(Integer servicePointId);
+
+    @Select("""
+            SELECT spg.id,
+                   spg.service_point_id AS servicePointId,
+                   spg.goods_id AS goodsId,
+                   spg.price,
+                   spg.enabled,
                    g.goods_sn AS goodsSn,
                    g.category_id AS categoryId,
                    g.name,

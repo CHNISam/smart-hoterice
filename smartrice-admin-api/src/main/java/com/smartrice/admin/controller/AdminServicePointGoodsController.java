@@ -14,7 +14,10 @@ public class AdminServicePointGoodsController {
     private ServicePointGoodsService servicePointGoodsService;
 
     @GetMapping("/list")
-    public Object list() {
+    public Object list(@RequestParam(required = false) Integer servicePointId) {
+        if (servicePointId != null) {
+            return ResponseUtil.ok(servicePointGoodsService.findByServicePointIdWithDetails(servicePointId));
+        }
         return ResponseUtil.ok(servicePointGoodsService.findAllWithDetails());
     }
 
