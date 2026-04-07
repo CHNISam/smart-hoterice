@@ -12,6 +12,7 @@
 - 后端多模块工程骨架（SpringBoot 3.x + MyBatis + MySQL 8.0）
 - 论文 12 个核心表 DDL + 补充表（category、brand、spec、attr、coupon 占位）
 - 种子数据（admin 账号、角色、权限、商品分类、测试服务点、司机、片区）
+- 后台首页可查看种子数据基线概览（只读核对，不含完整 CRUD）
 - 后台管理端 Vue 3 + Vite + Element Plus（登录页 + 主布局骨架）
 - Admin 登录/登出/鉴权接口（JWT）
 - RBAC 权限基础
